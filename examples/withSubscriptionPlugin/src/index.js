@@ -19,6 +19,7 @@ import c from './modules/C/models/c';
 // Import Vivy
 import Vivy from 'vivy';
 import VivyRouter from 'vivy-router';
+import vivySubscription from '../../../src';
 
 // Create browser history
 const history = createBrowserHistory();
@@ -30,6 +31,9 @@ const vivy = Vivy();
 vivy.use(VivyRouter({
     history
 }));
+
+// Apply subscription plugin
+vivy.use(vivySubscription());
 
 // Create store after configuration
 const store = vivy.createStore();
