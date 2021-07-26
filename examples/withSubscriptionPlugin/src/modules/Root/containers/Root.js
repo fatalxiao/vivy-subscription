@@ -17,7 +17,7 @@ import './Root.scss';
 
 const Root = ({
     route,
-    menu
+    menu, activatedMenu
 }) => (
     <div className="root">
 
@@ -28,7 +28,8 @@ const Root = ({
                 {
                     menu?.map((item, index) =>
                         <li key={index}>
-                            <NavLink to={item?.route}>
+                            <NavLink className={item === activatedMenu ? 'activated' : null}
+                                     to={item?.route}>
                                 {item?.name}
                             </NavLink>
                         </li>
@@ -48,13 +49,17 @@ Root.propTypes = {
 
     route: PropTypes.object,
 
-    menu: PropTypes.array
+    menu: PropTypes.array,
+    activatedMenu: PropTypes.object
 
 };
 
 export default connect(state => ({
 
     // Get menu config from root model
-    menu: state.root.menu
+    menu: state.root.menu,
+
+    // Get activated menu from root model
+    activatedMenu: state.root.activatedMenu
 
 }))(Root);
