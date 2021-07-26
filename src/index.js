@@ -28,7 +28,7 @@ export default function createVivySubscriptionPlugin(options = {}) {
      */
     function registerSubscriptions(store, nameSpace, subscriptions) {
 
-        if (!nameSpace || !subscriptions || subscriptions.length < 1) {
+        if (!store || !nameSpace || !subscriptions || subscriptions.length < 1) {
             return;
         }
 
@@ -38,7 +38,9 @@ export default function createVivySubscriptionPlugin(options = {}) {
                 unsubscriptions[nameSpace] = {};
             }
 
-            unsubscriptions[nameSpace][key] = subscriptions[key]({})(
+            unsubscriptions[nameSpace][key] = subscriptions[key]({
+                history: store.history
+            })(
                 store.dispatch,
                 store.getState
             );
