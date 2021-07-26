@@ -11,7 +11,7 @@
         "README.md"
     ],
     "scripts": {
-        "example:withRouterPlugin": "webpack-dev-server --open --hot --config examples/withRouterPlugin/webpack.config.js",
+        "example:withSubscriptionPlugin": "webpack-dev-server --open --hot --config examples/withSubscriptionPlugin/webpack.config.js",
         "build": "gulp",
         "do-publish": "npm run build && npm publish"
     },
@@ -103,6 +103,7 @@
         "style-loader": "^3.2.1",
         "url-loader": "^4.1.1",
         "vivy": "^0.2.0-alpha.0",
+        "vivy-router": "^0.0.1",
         "webpack": "^5.46.0",
         "webpack-cli": "^4.7.2",
         "webpack-dev-middleware": "^5.0.0",
