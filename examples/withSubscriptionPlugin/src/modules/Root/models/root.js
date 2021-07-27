@@ -68,10 +68,13 @@ export default {
          * @returns {function(*, *): *}
          */
         activatedMenuSubscription: ({history}) => (dispatch, getState) => {
+
+            // Return the unsubscription
             return history.listen(({pathname}) => dispatch({
                 type: 'root/updateActivatedMenu',
                 activatedMenu: getActivatedMenu(pathname)
             }));
+
         }
 
     }
