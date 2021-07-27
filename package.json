@@ -1,14 +1,15 @@
 {
     "name": "vivy-subscription",
     "author": "liangxiaojun",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "Vivy subscription plugin",
     "main": "./dist/index.js",
     "files": [
         "src",
         "dist",
         "LICENSE",
-        "README.md"
+        "README.md",
+        "index.d.ts"
     ],
     "scripts": {
         "build": "gulp",
