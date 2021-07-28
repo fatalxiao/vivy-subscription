@@ -19,7 +19,7 @@ import c from './modules/C/models/c';
 // Import Vivy
 import Vivy from 'vivy';
 import VivyRouter from 'vivy-router';
-import vivySubscription from '../../../src';
+import vivySubscription from 'vivy-subscription';
 
 // Create browser history
 const history = createBrowserHistory();
