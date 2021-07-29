@@ -1,1 +1,4 @@
-export default function createVivySubscriptionPlugin();
+/**
+ * Create Vivy subscription plugin instance
+ */
+export default function createVivySubscriptionPlugin(): Object;
