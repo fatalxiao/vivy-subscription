@@ -4,7 +4,7 @@
 
 /**
  * Create Vivy subscription plugin
- * @returns {Object}
+ * @returns {{onRegisterModel: onRegisterModel, onUnregisterModel: onUnregisterModel}}
  */
 export default function createVivySubscriptionPlugin() {
 
@@ -13,9 +13,9 @@ export default function createVivySubscriptionPlugin() {
 
     /**
      * Register subscriptions in models
-     * @param store
-     * @param nameSpace
-     * @param subscriptions
+     * @param store {Object}
+     * @param nameSpace {string}
+     * @param subscriptions {Object}
      */
     function registerSubscriptions(store, nameSpace, subscriptions) {
 
@@ -42,9 +42,9 @@ export default function createVivySubscriptionPlugin() {
 
     /**
      * Unregister subscriptions in models
-     * @param store
-     * @param nameSpace
-     * @param subscriptions
+     * @param store {Object}
+     * @param nameSpace {string}
+     * @param subscriptions {Object}
      */
     function unregisterSubscriptions(store, nameSpace, subscriptions) {
 
@@ -82,8 +82,8 @@ export default function createVivySubscriptionPlugin() {
 
         /**
          * Unregister subscriptions when unregister a Vivy model
-         * @param model
-         * @param store
+         * @param model {Object}
+         * @param store {Object}
          */
         onUnregisterModel: (model, store) => {
 
