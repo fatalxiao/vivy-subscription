@@ -1,7 +1,7 @@
 {
     "name": "vivy-subscription",
     "author": "liangxiaojun",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "description": "Vivy subscription plugin",
     "main": "./dist/index.js",
     "files": [
