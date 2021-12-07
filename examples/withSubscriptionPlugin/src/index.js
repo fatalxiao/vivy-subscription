@@ -7,8 +7,6 @@ import {render} from 'react-dom';
 import {createBrowserHistory} from 'history';
 import {renderRoutes} from 'react-router-config';
 import {Provider} from 'react-redux';
-import {ConnectedRouter} from 'connected-react-router';
-import {configureRoutes} from './routes';
 
 // Models
 import root from './modules/Root/models/root';
@@ -18,8 +16,11 @@ import c from './modules/C/models/c';
 
 // Import Vivy
 import Vivy from 'vivy';
-import VivyRouter from 'vivy-router';
+import VivyRouter, {ConnectedRouter} from 'vivy-router';
 import vivySubscription from 'vivy-subscription';
+
+// Import route config
+import {configureRoutes} from './routes';
 
 // Create browser history
 const history = createBrowserHistory();
