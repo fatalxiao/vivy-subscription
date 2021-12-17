@@ -55,3 +55,57 @@ $ npm run start
 ## Documentation
 
 ### Basic usage
+
+index.js
+
+```js
+import React from 'react';
+import {render} from 'react-dom';
+import {Provider} from 'react-redux';
+
+// Import Vivy
+import Vivy from 'vivy';
+
+// Import Vivy subscription plugin
+import vivySubscription from 'vivy-subscription';
+
+// Import your component and model
+import App from 'path_to_app_component';
+import app from 'path_to_app_model';
+
+// Create vivy
+const vivy = Vivy();
+
+// Apply subscription plugin
+vivy.use(vivySubscription());
+
+// Create store after configuration
+const store = vivy.createStore();
+
+// Register vivy model
+store.registerModel(app);
+
+render(
+    <Provider store={store}>
+        <App/>
+    </Provider>,
+    document.getElementById('app-container')
+);
+```
+
+app.js
+
+```js
+export default {
+    nameSpace: 'app',
+    state: null,
+    subscriptions: {
+
+        // Define a subscription
+        yourSubscription: ({history}) => (dispatch, getState) => {
+            // Bind history listening or do something else
+        }
+
+    }
+};
+```
