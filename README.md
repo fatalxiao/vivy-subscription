@@ -20,6 +20,8 @@
 A [Vivy][vivy-url] plugin which extend Vivy model to watch `history` or something else to update state by dispatching a
 reducer or action.
 
+## Docs
+
 * [Installation](#installation)
 * [Examples](#examples)
     * [Examples in repository](#examples-in-repository)
