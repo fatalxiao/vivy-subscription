@@ -17,7 +17,7 @@
         "react-router-dom": "^5.3.0",
         "vivy": "^1.2.0",
         "vivy-router": "^1.0.1",
-        "vivy-subscription": "^1.0.1"
+        "vivy-subscription": "^1.1.0"
     },
     "devDependencies": {
         "@babel/core": "^7.16.12",

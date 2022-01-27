@@ -60,14 +60,14 @@ export default {
         }
 
     },
-    subscriptions: {
+    subscriptions: [
 
         /**
          * A subscription to update activated menu when history change
          * @param history
          * @returns {function(*, *): *}
          */
-        activatedMenuSubscription: ({history}) => (dispatch, getState) => {
+            ({history}) => (dispatch, getState) => {
 
             // Return the unsubscription
             return history.listen(({pathname}) => dispatch({
@@ -77,5 +77,5 @@ export default {
 
         }
 
-    }
+    ]
 };
