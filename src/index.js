@@ -15,7 +15,7 @@ export default function VivySubscription() {
      * Register subscriptions in models
      * @param store {Object}
      * @param nameSpace {string}
-     * @param subscriptions {Object}
+     * @param subscriptions {Array}
      */
     function registerSubscriptions(store, nameSpace, subscriptions) {
 
@@ -23,17 +23,16 @@ export default function VivySubscription() {
             return;
         }
 
-        Object.entries(subscriptions)?.forEach(([key, subscription]) => {
+        subscriptions.forEach(subscription => {
 
             if (!unsubscriptions.hasOwnProperty(nameSpace)) {
-                unsubscriptions[nameSpace] = {};
+                unsubscriptions[nameSpace] = [];
             }
 
-            unsubscriptions[nameSpace][key] = subscription({
-                history: store.history
-            })(
-                store.dispatch,
-                store.getState
+            unsubscriptions[nameSpace].push(
+                subscription({
+                    history: store.history
+                })(store.dispatch, store.getState)
             );
 
         });
@@ -44,17 +43,17 @@ export default function VivySubscription() {
      * Unregister subscriptions in models
      * @param store {Object}
      * @param nameSpace {string}
-     * @param subscriptions {Object}
      */
-    function unregisterSubscriptions(store, nameSpace, subscriptions) {
+    function unregisterSubscriptions(store, nameSpace) {
 
-        if (!store || !nameSpace || !subscriptions || subscriptions.length < 1) {
+        if (
+            !store || !nameSpace
+            || !unsubscriptions?.[nameSpace] || unsubscriptions[nameSpace].length < 1
+        ) {
             return;
         }
 
-        Object.entries(subscriptions)?.forEach(([key, subscription]) => {
-            unsubscriptions?.[nameSpace]?.[key]?.();
-        });
+        unsubscriptions[nameSpace].forEach(unsubscription => unsubscription?.());
 
     }
 
@@ -74,8 +73,8 @@ export default function VivySubscription() {
             const {nameSpace, subscriptions} = model;
 
             // Register subscriptions
-            if (subscriptions && Object.keys(subscriptions).length > 0) {
-                registerSubscriptions(store, nameSpace, subscriptions || {});
+            if (subscriptions?.length > 0) {
+                registerSubscriptions(store, nameSpace, subscriptions || []);
             }
 
         },
@@ -94,8 +93,8 @@ export default function VivySubscription() {
             const {nameSpace, subscriptions} = model;
 
             // Unregister subscriptions
-            if (subscriptions && Object.keys(subscriptions).length > 0) {
-                unregisterSubscriptions(store, nameSpace, subscriptions || {});
+            if (subscriptions?.length > 0) {
+                unregisterSubscriptions(store, nameSpace);
             }
 
         }
