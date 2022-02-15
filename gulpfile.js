@@ -4,13 +4,14 @@
 
 'use strict';
 
-const gulp = require('gulp'),
-    clean = require('gulp-clean'),
-    babel = require('gulp-babel');
+const gulp = require('gulp');
+const del = require('del');
+const babel = require('gulp-babel');
 
 gulp.task('clean', () =>
-    gulp.src('./dist')
-        .pipe(clean())
+    del([
+        'dist'
+    ])
 );
 
 gulp.task('build', () =>
