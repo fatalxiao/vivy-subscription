@@ -64,7 +64,9 @@
         "eslint-plugin-react-hooks": "^4.3.0",
         "gulp": "^4.0.2",
         "gulp-babel": "^8.0.0",
+        "history": "^4.10.1",
         "jest": "^27.5.1",
-        "vivy": "^2.0.5"
+        "vivy": "^2.0.5",
+        "vivy-router": "^2.0.0"
     }
 }
