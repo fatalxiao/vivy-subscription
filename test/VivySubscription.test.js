@@ -5,6 +5,9 @@ import Vivy from 'vivy';
 import VivyRouter from 'vivy-router';
 import VivySubscription from '../src';
 
+// Models
+import testModel from './mocks/testModel';
+
 // History
 import {createMemoryHistory} from 'history';
 
@@ -19,6 +22,7 @@ test('Use Vivy Subscription by memory history', () => {
     vivy.use(VivySubscription());
 
     const store = vivy.createStore();
+    store.registerModel(testModel);
 
     expect(
         store.getState().testModel
