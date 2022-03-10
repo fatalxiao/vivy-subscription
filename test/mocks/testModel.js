@@ -1,9 +1,9 @@
 /**
- * @file testHistoryModel.js
+ * @file testModel.js
  */
 
 export default {
-    nameSpace: 'testHistoryModel',
+    nameSpace: 'testModel',
     state: null,
     reducers: {
         update: (state, {pathname}) => {
@@ -12,7 +12,7 @@ export default {
     },
     subscriptions: [
         ({history}) => (dispatch, getState) => history.listen(({pathname}) => dispatch({
-            type: 'testHistoryModel/update',
+            type: 'testModel/update',
             pathname
         }))
     ]
