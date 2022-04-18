@@ -3,7 +3,7 @@
  */
 
 import React from 'react';
-import {render} from 'react-dom';
+import {createRoot} from 'react-dom/client';
 import {createBrowserHistory} from 'history';
 import {renderRoutes} from 'react-router-config';
 import {Provider} from 'react-redux';
@@ -47,11 +47,10 @@ store.registerModels([
     c
 ]);
 
-render(
+createRoot(document.getElementById('app-container')).render(
     <Provider store={store}>
         <ConnectedRouter history={history}>
             {renderRoutes(configureRoutes())}
         </ConnectedRouter>
-    </Provider>,
-    document.getElementById('app-container')
+    </Provider>
 );
