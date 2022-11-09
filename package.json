@@ -1,7 +1,7 @@
 {
     "name": "vivy-subscription",
     "author": "liangxiaojun",
-    "version": "2.0.1",
+    "version": "2.0.2",
     "description": "A Vivy Plugin to handle subscriptions in Vivy model to watch history or something else.",
     "main": "./dist/index.js",
     "files": [
