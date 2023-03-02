@@ -54,7 +54,7 @@
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "react-router": "^5.2.1",
-        "react-vivy": "^1.0.0",
+        "react-vivy": "^1.2.0",
         "vivy": "^2.2.6",
         "vivy-router": "^2.0.5"
     }
