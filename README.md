@@ -10,7 +10,7 @@
 
 [with-subscription-plugin-example-url]: https://github.com/fatalxiao/vivy-subscription/tree/main/examples/withSubscriptionPlugin
 
-[pieb-with-dpe-frontend-url]: https://github.com/fatalxiao/pieb-with-dpe-frontend
+[labor-analgesia-frontend-url]: https://github.com/fatalxiao/labor-analgesia-frontend
 
 # vivy-subscription
 
@@ -52,7 +52,7 @@ $ npm run start
 
 ### Complete and real project example
 
-* [pieb-with-dpe-frontend][pieb-with-dpe-frontend-url]
+* [labor-analgesia-frontend][labor-analgesia-frontend-url]
 
 ## Documentation
 
