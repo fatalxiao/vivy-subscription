@@ -1,7 +1,7 @@
 {
     "name": "vivy-subscription",
     "author": "liangxiaojun",
-    "version": "3.0.0",
+    "version": "3.0.1",
     "description": "A Vivy Plugin to handle subscriptions in Vivy model to watch history or something else.",
     "main": "./esm/index.js",
     "files": [
