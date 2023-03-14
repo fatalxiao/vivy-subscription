@@ -4,7 +4,6 @@
 
 /**
  * Menu config
- * @type {[]}
  */
 const MENU = [{
     name: 'Root',
@@ -50,7 +49,6 @@ export default {
          * Update activated menu
          * @param state
          * @param activatedMenu
-         * @returns {*&{activatedMenu}}
          */
         updateActivatedMenu: (state, {activatedMenu}) => {
             return {
@@ -65,9 +63,8 @@ export default {
         /**
          * A subscription to update activated menu when history change
          * @param history
-         * @returns {function(*, *): *}
          */
-            ({history}) => (dispatch, getState) => {
+            ({history}) => dispatch => {
 
             // Return the unsubscription
             return history.listen(({pathname}) => dispatch({
