@@ -3,17 +3,22 @@
     "author": "liangxiaojun",
     "version": "3.1.0",
     "description": "A Vivy Plugin to handle subscriptions in Vivy model to watch history or something else.",
-    "main": "./esm/index.js",
+    "main": "lib/index.js",
+    "module": "es/index.js",
+    "types": "es/index.d.ts",
     "files": [
-        "esm",
+        "lib",
+        "es",
         "src",
         "LICENSE",
         "README.md"
     ],
     "scripts": {
-        "clean": "rimraf esm",
+        "clean": "rimraf lib es",
         "test": "cross-env NODE_ENV=test jest test/**.test.js",
-        "build": "npm run clean && tsc",
+        "build:commonjs": "tsc --module commonjs --declaration false --outDir lib",
+        "build:es": "tsc --module esnext --declaration true --outDir es",
+        "build": "npm run clean && npm run build:commonjs && npm run build:es",
         "do-publish": "npm run build && npm publish"
     },
     "repository": {
