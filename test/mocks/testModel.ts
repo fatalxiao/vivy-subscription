@@ -1,17 +1,20 @@
 /**
- * @file testModel.js
+ * @file testModel.ts
  */
 
-export default {
+// Types
+import {VivyModel} from 'vivy';
+
+export default <VivyModel<string>>{
     nameSpace: 'testModel',
-    state: null,
+    state: undefined,
     reducers: {
         update: (state, {pathname}) => {
             return pathname;
         }
     },
     subscriptions: [
-        ({history}) => (dispatch, getState) => history.listen(({pathname}) => dispatch({
+        ({history}) => dispatch => history.listen(({pathname}) => dispatch({
             type: 'testModel/update',
             pathname
         }))
